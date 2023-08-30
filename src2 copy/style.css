@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Lato:wght@700&family=Poppins:wght@200&family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+} 
+body{
+    position: relative;
+    width: 100%;
+    min-width: 100vh;
+    padding: 100px;
+    display: flex; 
+    background-color: black;
+    align-items:center ;
+    justify-content: space-between;
+    overflow:auto;
+    color: aliceblue;
+}
+.circle{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+    background-color: #e51e2a;
+    clip-path: circle(50% at bottom right);
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+header .logo{
+    position: relative;
+    max-width: 150px;
+}
+header .menu ul{
+    position: relative;
+    display: flex;
+
+}
+header .menu li{
+    list-style: none;
+}
+header .menu li a{ 
+    color: aliceblue;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 19px;
+    margin-left: 100px;
+    transform: 2ms easy-in;
+    position: relative;
+}
+header .menu li a:before{
+    content:' ';
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 0px;
+    height: 1px;
+    background-color: rgb(234, 235, 223) ;
+    transition: all 1.5s ease;
+}
+header .menu li a:hover:before{
+    width: 100%;
+}
+
+.container{
+ position: relative;
+ width: 100%;
+ display: flex;
+ align-items:center ;
+ justify-content: space-between;
+}
+.container .text{
+    position: relative;
+    max-width: 600px;
+    margin-right: 20px;
+}
+.container .text h2{
+    color: aliceblue;
+    font-size: 3em;
+    margin-bottom: 10px;
+    line-height: 2.5em;
+    font-weight: 700;
+
+}
+.container .text h2 span{
+    font-size: 3.5em;
+    color: #e51e2a;
+}
+.container .text p{
+    color: aliceblue;
+}
+.container .text a{
+    display: inline-block;
+    margin-top: 50px;
+    padding: 10px 25px;
+    background: #e51e2a;
+    color: aliceblue;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+    border-radius: 40px;
+    transition: 0.3s ease-in-out;
+    margin-bottom: 100px;
+    
+}
+.container .text a:hover{
+transform: translateY(-10px);
+
+}
+.icons{
+    position: relative;
+    bottom: -25px;
+    left: -192px;
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+
+}
+
+
+.icons li{
+    list-style: none;
+}
+.icons li a{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease-in-out;
+    margin-right: 30px;
+    
+    
+}
+.icons li a:hover{
+    background: #e51e2a;
+    transform: translateY(-10px);
+}
+.icons li a img{
+    transform: scale(0.5);
+    filter: invert(1);
+}
+.boximg{
+    position: fixed;
+    right: 0;
+    bottom: 0px;
+
+}
+.boximg img{
+    width: 200px;
+}
+.boximg .img1{
+    transform: rotate(-15deg);
+
+}
+.boximg .img2{
+    transform: rotate(-15deg);
+
+}
+
+.boximg .img3{
+    transform: rotate(15deg);
+
+}
+
+.boximg .img4{
+    transform: rotate(-15deg);
+}
+
+section .tcontent{
+    display: block;
+    margin-top: 50px;
+}
+.contact_methods{
+    display: flex;
+    justify-content: space-between;
+}
+form input, form textarea, form button{
+    display: block;
+    width: 320px;
+    margin-bottom: 8px;
+    padding: 8px;
+    
+}
+
+
+section .contact_menu_name{
+    margin-bottom: 25px;
+}
+section h3{
+    margin-bottom: 8px;
+}
+
+
+form input{
+    border-radius: 10px;
+    border:#ffffff ;
+}
+input{
+    color: #000000;
+    font-weight: 700;
+}
+input::placeholder{
+    opacity: 100%;
+    font-weight:500;
+}
+textarea::placeholder{
+    font-weight: 500;
+}
+form textarea{
+    resize: none;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    color: #000;
+    font-weight: 700;
+}
+input[type]::-webkit-input-placeholder{
+    color: #0f0000;
+}
+form button{
+    color: #ffffff;
+    font-weight: 700;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #f1e8e8;
+    transition: 1.5s;
+    height: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    position: relative;
+}
+form button:before{
+   content: ' ';
+   bottom: 0;
+   left: 0;
+   right: 0;
+   position: absolute;
+   width: 0;
+   height: 50px;
+   background-color: red;
+   z-index: -1;
+   transition: 1.5s;
+   border-radius: 10px;
+
+}
+form button:hover:before{
+    width: 100%;
+}
+form button:hover{
+    border: none;
+}
