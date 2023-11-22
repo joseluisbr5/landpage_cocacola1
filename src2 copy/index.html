@@ -49,16 +49,68 @@
             <div class="contact_methods">
                 <div class="contact_us">
                     <h3>FALE CONOSCO</h3>
-                    <form>
+                    <form id="mensagem">
                         <input type="text" id="name" placeholder="Seu nome" required>
-                        <input type="email" placeholder="Seu e-mail">
-                        <input type="tel" placeholder="Seu telefone (opicional)">
+                        <p class="errorMessage">
+                            O nome precisa ser completo
+                        </p>
+                        <input type="email" id="emailC" placeholder="Seu e-mail">
+                        <input type="tel" id="telefone" placeholder="Seu telefone (opicional)">
                         <textarea placeholder="Sua mensagem" required cols="30" rows="10"></textarea>
                         <button class="btn" type="submit">Enviar</button>
                     </form>
+                    <p class="sucessMessage">
+                        Olá, <b>José Luis</b>, Seu email: <b>joseluis.123.br@gmail.com</b> está correto, e seu número de contato é <b>86981925749</b>
+                    </p>
                 </div>
                 </div>
+               
                 </div>
     </section>
+    <script>
+        const form = document.getElementById('mensagem');
+        const seuNome = document.getElementById('name');
+        let formValido = false;
+
+        function validaNome(name1){
+            const nomeComoArray = name1.split(' ');
+            return nomeComoArray.length >= 2;
+        }
+        form.addEventListener('submit', function(e) {
+            
+            e.preventDefault();
+
+            const numeroCliente = document.getElementById('telefone');
+            const emailCliente = document.getElementById('emailC');
+            const mensagemSucesso = `Olá, <b>${seuNome.value}<b/>, Seu email: <b> ${emailCliente.value}<b/> está correto, e seu número de contato é <b>${numeroCliente.value}<b/>.`;
+            formValido = validaNome(seuNome.value)
+            if (formValido) {
+                const containerMensagemSucesso = document.querySelector('.sucessMessage');
+                containerMensagemSucesso.innerHTML = mensagemSucesso;
+                containerMensagemSucesso.style.display = 'block';
+               // document.querySelector('.sucessMessage').innerHTML = mensagemSucesso;
+
+                seuNome.value = ' ';
+                numeroCliente.value = ' ';
+                emailCliente.value = ' ';
+            } else {
+                document.querySelector('.errorMessage').style.display = 'block';
+            }
+        })
+            seuNome.addEventListener('keyup', function(e) {
+                console.log(e.target.value);
+                formValido = validaNome(e.target.value)
+                
+                if(!formValido){
+                    seuNome.classList.add('error');                //seuNome.style.border = '1px solid red';
+                    document.querySelector('.errorMessage').style.display = 'block';
+                }else{
+                    seuNome.classList.remove('error');
+                    document.querySelector('.errorMessage').style.display = 'none';
+                }
+            })
+
+        console.log(form);
+    </script>
 </body>
 </html>

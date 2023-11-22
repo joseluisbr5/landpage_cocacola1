@@ -265,3 +265,23 @@ form button:hover:before{
 form button:hover{
     border: none;
 }
+.sucessMessage{
+    background-color: #e51e2a; 
+    padding: 8px ;
+    color: #fff;
+    width: 320px;
+    border-radius: 10px;
+    }
+.errorMessage{
+    padding: 8px;
+    background-color: #e51e2a;
+    color: aliceblue;
+    margin-bottom: 8px;
+    font-size: 12px;
+    display: none;
+}
+input.error{
+    color: #e51e2a;
+    border-color: #e51e2a;
+    outline-color:#e51e2a
+}
